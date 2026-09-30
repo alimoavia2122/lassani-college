@@ -1,0 +1,7 @@
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+.hero { background: linear-gradient(120deg, rgba(6,78,59,.92), rgba(5,150,105,.75)),
+  url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=70') center/cover, #065f46; }
+.img-fallback.broken { background: linear-gradient(135deg,#34d399,#065f46); color: transparent; }
+.bubble { max-width: 85%; padding: .5rem .75rem; border-radius: 1rem; font-size: .875rem; white-space: pre-wrap; }
+.bubble.user { background: #059669; color: #fff; margin-left: auto; border-bottom-right-radius: .25rem; }
+.bubble.bot { background: #fff; border: 1px solid #e2e8f0; border-bottom-left-radius: .25rem; }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lasani Public School & College, Jhammat Shumali</title>
+<meta name="description" content="Lasani Public School & College – admissions, fees, subjects, teachers and activities.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+    <a href="#home" class="font-bold text-emerald-800 leading-tight">Lasani Public<br><span class="text-xs font-medium text-slate-500">School & College</span></a>
+    <button id="menuBtn" class="md:hidden p-2 text-2xl" aria-label="Menu">☰</button>
+    <ul id="menu" class="hidden md:flex gap-6 text-sm font-medium max-md:absolute max-md:top-full max-md:left-0 max-md:right-0 max-md:flex-col max-md:bg-white max-md:p-4 max-md:shadow">
+      <li><a href="#about" class="hover:text-emerald-700">About</a></li>
+      <li><a href="#academics" class="hover:text-emerald-700">Academics</a></li>
+      <li><a href="#teachers" class="hover:text-emerald-700">Teachers</a></li>
+      <li><a href="#activities" class="hover:text-emerald-700">Activities</a></li>
+      <li><a href="#admission" class="hover:text-emerald-700">Admission</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero relative text-white">
+  <div class="max-w-6xl mx-auto px-4 py-20 md:py-32">
+    <p class="uppercase tracking-widest text-emerald-200 text-xs md:text-sm mb-3">Jhammat Shumali</p>
+    <h1 class="text-3xl md:text-6xl font-extrabold leading-tight max-w-3xl">Lasani Public School & College</h1>
+    <p class="mt-4 text-lg md:text-xl text-emerald-50 max-w-xl">Building knowledge, character and confidence for a brighter future.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#admission" class="bg-amber-400 text-slate-900 font-semibold px-6 py-3 rounded-lg hover:bg-amber-300">Apply for Admission</a>
+      <button onclick="toggleChat(true)" class="border border-white/70 px-6 py-3 rounded-lg hover:bg-white/10">Ask our Assistant</button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+  <div>
+    <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">Welcome to Our College</h2>
+    <p class="mt-4 text-slate-600">Lasani Public School & College offers quality education with dedicated teachers, a disciplined environment and a rich campus life. We prepare students for success in exams and in life.</p>
+    <div class="grid grid-cols-3 gap-3 mt-6 text-center">
+      <div class="bg-white rounded-xl shadow p-4"><p class="text-2xl font-bold text-emerald-700">11</p><p class="text-xs text-slate-500">Teachers</p></div>
+      <div class="bg-white rounded-xl shadow p-4"><p class="text-2xl font-bold text-emerald-700">9</p><p class="text-xs text-slate-500">Subjects</p></div>
+      <div class="bg-white rounded-xl shadow p-4"><p class="text-2xl font-bold text-emerald-700">6</p><p class="text-xs text-slate-500">Events</p></div>
+    </div>
+  </div>
+  <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=70" alt="Students celebrating" loading="lazy" class="rounded-2xl shadow-lg w-full h-64 md:h-80 object-cover img-fallback" onerror="this.classList.add('broken')">
+</section>
+
+<!-- ACADEMICS -->
+<section id="academics" class="bg-white py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-emerald-800 text-center">Academics & Fees</h2>
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      <div class="rounded-2xl border p-6 shadow-sm"><p class="text-sm text-slate-500">1st Year</p><p class="text-3xl font-extrabold text-emerald-700">Rs. 30,000 <span class="text-base font-medium text-slate-500">/ annum</span></p></div>
+      <div class="rounded-2xl border p-6 shadow-sm"><p class="text-sm text-slate-500">2nd Year</p><p class="text-3xl font-extrabold text-emerald-700">Rs. 20,000 <span class="text-base font-medium text-slate-500">/ annum</span></p></div>
+    </div>
+    <h3 class="font-semibold mt-10 mb-3">Subjects</h3>
+    <div class="flex flex-wrap gap-2" id="subjects"></div>
+    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=70" alt="Classroom" loading="lazy" class="rounded-2xl shadow mt-10 w-full h-56 md:h-72 object-cover img-fallback" onerror="this.classList.add('broken')">
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section id="teachers" class="max-w-6xl mx-auto px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-bold text-emerald-800 text-center">Our Teachers</h2>
+  <div id="teacherGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-8"></div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activities" class="bg-emerald-900 text-white py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-center">Extra-Curricular Activities</h2>
+    <div id="activityGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8"></div>
+  </div>
+</section>
+
+<!-- ADMISSION -->
+<section id="admission" class="max-w-4xl mx-auto px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-bold text-emerald-800 text-center">Admission</h2>
+  <div class="bg-white rounded-2xl shadow p-6 mt-8 grid md:grid-cols-3 gap-6 text-center">
+    <div><p class="text-3xl">💰</p><p class="font-semibold mt-2">Admission Fee</p><p class="text-slate-600 text-sm">Rs. 5,000</p></div>
+    <div><p class="text-3xl">🪪</p><p class="font-semibold mt-2">CNIC</p><p class="text-slate-600 text-sm">Front and back copy</p></div>
+    <div><p class="text-3xl">👨‍👩‍👦</p><p class="font-semibold mt-2">Guardian</p><p class="text-slate-600 text-sm">Father or mother must come with the student</p></div>
+  </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-300 text-center text-sm py-6">© <span id="yr"></span> Lasani Public School & College, Jhammat Shumali</footer>
+
+<!-- CHATBOT -->
+<button id="chatFab" onclick="toggleChat()" aria-label="Open chat" class="fixed bottom-4 right-4 z-50 w-14 h-14 rounded-full bg-emerald-600 text-white text-2xl shadow-xl hover:bg-emerald-700">💬</button>
+<div id="chatBox" class="hidden fixed z-50 bottom-20 right-4 left-4 sm:left-auto sm:w-96 h-[70vh] max-h-[560px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+  <div class="bg-emerald-700 text-white px-4 py-3 flex justify-between items-center">
+    <div><p class="font-semibold">Lasani Assistant</p><p class="text-xs text-emerald-100">Ask about fees, admission, subjects…</p></div>
+    <button onclick="toggleChat(false)" class="text-xl" aria-label="Close">✕</button>
+  </div>
+  <div id="msgs" class="flex-1 overflow-y-auto p-3 space-y-2 bg-slate-50"></div>
+  <div id="chips" class="px-3 py-2 flex gap-2 overflow-x-auto text-xs whitespace-nowrap border-t"></div>
+  <form id="chatForm" class="flex gap-2 p-3 border-t">
+    <input id="chatInput" autocomplete="off" maxlength="300" placeholder="Type your question…" class="flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+    <button class="bg-emerald-600 text-white px-4 rounded-lg hover:bg-emerald-700">Send</button>
+  </form>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
